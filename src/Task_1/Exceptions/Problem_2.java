@@ -19,6 +19,11 @@ public class Problem_2 {
             System.out.println("Exception - " + e);
 
         }
+        /** This block always executes **/
+        finally{
+            String s = "hello";
+            System.out.println(s);
+        }
         //rest code of the program
         System.out.println("Next Statement...");
     }
