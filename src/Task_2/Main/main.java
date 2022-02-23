@@ -31,7 +31,7 @@ public class main {
          // Take data from user input
 
             // Employee ID
-         /*   System.out.println("Enter Employee ID");
+            System.out.println("Enter Employee ID");
             int empId = sc.nextInt();
 
             // FirstName
@@ -63,11 +63,11 @@ public class main {
             if (dao.insertEmployee(c.getConnection(), employee)) {
                 System.out.println("Records Inserted Successfully !!!");
                 System.out.println();
-                System.out.println(" ################################################################################# ");
+                System.out.println("#######################################################################");
                 dao.retrieveAllEmployeesData(c.getConnection());
             } else {
                 System.out.println("Sorry! No Records Inserted");
-            } */
+            }
 
     /************************************************* RETRIEVE DATA USING EMPLOYEE ID *******************************************************************/
 
@@ -103,6 +103,7 @@ public class main {
 
         /*************************************************RETRIEVE DATA OF ALL EMPLOYEES *******************************************************************/
 
+
       /* EmployeeDao dao = new EmployeeDao();
 
         System.out.println(" ####################################################################### ");
@@ -113,15 +114,29 @@ public class main {
 
         /*************************************************RETRIEVE DATA OF ALL EMPLOYEES WITH DEPTID (MAX 10) *******************************************************************/
 
-        EmployeeDao dao = new EmployeeDao();
+         /*   EmployeeDao dao = new EmployeeDao();
 
-        System.out.println("Enter Department Id");
-        int deptId = sc.nextInt();
+            System.out.println("Enter Department Id");
+            int deptId = sc.nextInt();
 
-        System.out.println("#######################################################################");
-        dao.retrieveAllEmployeesDataUsingDeptId(c.getConnection() , deptId);
+            System.out.println("#######################################################################");
+            dao.retrieveAllEmployeesDataUsingDeptId(c.getConnection(), deptId);
+
+          */
+
+        /************************************************* UPDATE DATA OF EMPLOYEE *******************************************************************/
+
+      /*  EmployeeDao dao = new EmployeeDao();
 
 
+        Employee employee = new Employee();
+
+
+
+        dao.updateEmployee(c.getConnection() , employee);
+
+
+       */
 
     }
 
