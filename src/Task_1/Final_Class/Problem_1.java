@@ -14,7 +14,7 @@ public final class Problem_1 {
     /** Final method -  can't be override **/
     final void display()
     {
-        System.out.println("This is a final method.");
+        System.out.println("This is a final method");
     }
 
 
