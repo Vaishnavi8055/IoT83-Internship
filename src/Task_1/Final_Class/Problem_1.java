@@ -17,5 +17,14 @@ public final class Problem_1 {
         System.out.println("This is a final method");
     }
 
+    public static void main(String[] args) {
 
+        int arr[] = {1, 2, 3};
+
+        // final with for-each statement
+        // legal statement
+        for (final int i : arr)
+            System.out.println(i + " ");
+
+    }
 }
