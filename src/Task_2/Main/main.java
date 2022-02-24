@@ -31,7 +31,7 @@ public class main {
          // Take data from user input
 
             // Employee ID
-            System.out.println("Enter Employee ID");
+        /*    System.out.println("Enter Employee ID");
             int empId = sc.nextInt();
 
             // FirstName
@@ -68,6 +68,8 @@ public class main {
             } else {
                 System.out.println("Sorry! No Records Inserted");
             }
+
+         */
 
     /************************************************* RETRIEVE DATA USING EMPLOYEE ID *******************************************************************/
 
@@ -137,6 +139,131 @@ public class main {
 
 
        */
+
+
+        /********
+         *
+         *                                      TASK - 3 BEGINS
+         *
+         *********/
+
+        /************************************************* Select Top 5 Employee with highest salary *******************************************************************/
+
+       /* EmployeeDao dao = new EmployeeDao();
+
+        System.out.println("#######################################################################");
+        dao.fiveEmployeeWithHighestSalary(c.getConnection()); */
+
+
+        /************************************************* Select Employee with MAX salary *******************************************************************/
+
+       /* EmployeeDao dao = new EmployeeDao();
+
+        System.out.println("#######################################################################");
+        dao.employeeWithMaxSalary(c.getConnection()); */
+
+        /************************************************* Select Employee with MIN salary *******************************************************************/
+
+       /* EmployeeDao dao = new EmployeeDao();
+
+        System.out.println("#######################################################################");
+        dao.employeeWithMinSalary(c.getConnection());
+
+        */
+
+        /************************************************* Total Salary Paid *******************************************************************/
+
+      /*  EmployeeDao dao = new EmployeeDao();
+
+        System.out.println("#######################################################################");
+        dao.totalSalaryPaid(c.getConnection());
+
+       */
+
+        /************************************************* Avg Salary Paid Dept Wise*******************************************************************/
+
+
+       /* EmployeeDao dao = new EmployeeDao();
+
+        System.out.println("#######################################################################");
+        dao.avgSalaryDeptWise(c.getConnection());
+
+        */
+
+        /***************************************** Employee's salary greater than average salary of any department*******************************************************************/
+
+
+      /*  EmployeeDao dao = new EmployeeDao();
+
+        System.out.println("#######################################################################");
+        dao.empSalaryGreaterThanAvg(c.getConnection());
+
+       */
+
+        /***************************************** Retrieve Employee data using city ******************************************************************/
+
+
+     /*  EmployeeDao dao = new EmployeeDao();
+
+        System.out.println("Enter the Employee's city");
+       String city = sc.next();
+
+        System.out.println("#######################################################################");
+        dao.retrieveAllEmployeesDataUsingCity(c.getConnection(),city);
+
+      */
+
+        /***************************************** Retrieve Employee data with deptName ******************************************************************/
+
+
+       /* EmployeeDao dao = new EmployeeDao();
+
+        System.out.println("#######################################################################");
+        dao.retrieveAllEmployeesDataWithDeptName(c.getConnection());
+
+
+        */
+
+        /***************************************** Employee's age greater than average age  ******************************************************************/
+
+
+      /*  EmployeeDao dao = new EmployeeDao();
+
+        System.out.println("#######################################################################");
+        dao.empAgeGreaterThanAvg(c.getConnection());
+
+
+       */
+
+        /***************************************** Salary Sorted in ASCENDING ORDER  ******************************************************************/
+
+
+      /*  EmployeeDao dao = new EmployeeDao();
+
+        System.out.println("#######################################################################");
+        dao.retrieveSalaryInAscOrder(c.getConnection());
+
+
+       */
+
+
+        /***************************************** Salary Sorted in DESCENDING ORDER  ******************************************************************/
+
+
+        EmployeeDao dao = new EmployeeDao();
+
+        System.out.println("#######################################################################");
+        dao.retrieveSalaryInDescOrder(c.getConnection());
+
+
+        /********
+         *
+         *                                      TASK - 3 ENDS
+         *
+         *********/
+
+
+
 
     }
 
