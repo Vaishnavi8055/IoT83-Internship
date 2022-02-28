@@ -30,7 +30,7 @@ public class DepartmentDao {
      * @param deptName
      * @param deptCity
      */
-    public static void insertIntoDepartmentTable(int deptId , String deptName , String deptCity) {
+    public void insertIntoDepartmentTable(int deptId , String deptName , String deptCity) {
 
         Transaction transaction = null;
         Session session = HibernateUtil.getSessionFactory().openSession();;
@@ -70,38 +70,49 @@ public class DepartmentDao {
     }
 
     /**
-     * Hibernate Query Language (HQL) is an object-oriented query language, similar to SQL,
-     * but instead of operating on tables and columns,
-     * HQL works with persistent objects and their properties.
+     *  RETRIEVE
      */
-    public List<Department> getDepartmentList() {
+    public void getDepartmentTable() {
 
         Session session = HibernateUtil.getSessionFactory().openSession();
-        Query query = session.createQuery("FROM Department");
+        Transaction transaction = null;
 
-        List<Department> deptList = query.list();
-        session.close();
+        try{
+            // get Entity/Class
+            // second parameter is the primary key
+            Department department = (Department) session.get(Department.class , 1001);
 
-      return deptList;
+            System.out.println("------------------------------------------------");
+
+            System.out.println("Department ID :- " + department.getDeptId());
+            System.out.println("Department Name :- " + department.getDeptName());
+            System.out.println("Department City :- " + department.getDeptCity());
+
+            System.out.println("------------------------------------------------");
+
+
+            //start the transaction/work
+            transaction = session.beginTransaction();
+
+
+            transaction.commit();
+
+        }
+        catch (HibernateException e) {
+
+            if (transaction != null)
+                transaction.rollback();
+
+            e.printStackTrace();
+
+        } finally {
+            try {
+                if (session != null) session.close();
+            } catch (Exception ex) {
+            }
+        }
     }
 
 
-    /*public static void main(String[] args) {
 
-        DepartmentDao deptDao = new DepartmentDao();
-       // Department department = new Department()
-
-        deptDao.insertIntoDepartmentTable(1001 , "IT" , "GGN");
-
-        // To print
-        System.out.println("------------------------------");
-
-        List<Department> deptList = deptDao.getDepartmentList();
-        System.out.println("emp size: "+ deptList.size());
-        deptList.stream().forEach(System.out::println);
-
-        System.out.println("-------------------------------");
-
-
-    }*/
 }

@@ -8,10 +8,11 @@ package Task_3.Data;/*
 import Task_3.Data.Department;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "employee" , schema = "organisation")
-public class Employee {
+public class Employee implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
@@ -32,8 +33,8 @@ public class Employee {
     @Column(nullable = false)
     private String city;
 
-    /*@Column(nullable = false , insertable = false , updatable = false)
-    private int deptId;*/
+   @Column(nullable = false , insertable = false , updatable = false)
+   private int deptId;
 
 
     /**

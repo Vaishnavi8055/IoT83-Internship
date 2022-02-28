@@ -10,8 +10,6 @@ import Task_3.Dao.EmployeeDao;
 import Task_3.Data.Department;
 import Task_3.Data.Employee;
 
-import java.util.HashSet;
-import java.util.List;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -25,9 +23,11 @@ public class main {
 
         System.out.println("------------------------------------------");
         System.out.println("1. Insert Employee Data");
-        System.out.println("2. Delete Employee Data");
-        System.out.println("3. Update Employee Data");
-        System.out.println("4. Insert Employee Data");
+        System.out.println("2. Update Employee Data");
+        System.out.println("3. Delete Employee Data");
+        System.out.println("4. Retrieve Employee Data");
+        System.out.println("5. Insert Department Data");
+        System.out.println("6. Retrieve Department Data");
         System.out.println("------------------------------------------");
 
         int choice = scanner.nextInt();
@@ -37,39 +37,92 @@ public class main {
             case 1 : {
                 /** Insert In Employee Table **/
 
-                System.out.println("Data Inserting .............");
+               System.out.println("Data Inserting .............");
+
+                Employee employee1 = new Employee();
+                Department department = new Department();
+
+                System.out.println("Enter Employee First name");
+                String empFName = scanner.next();
+
+                System.out.println("Enter Employee Last name");
+                String empLName = scanner.next();
+
+
+                System.out.println("Enter Employee Id");
+                int empId = scanner.nextInt();
+
+                System.out.println("Enter Employee city");
+                String empCity = scanner.next();
+
+                System.out.println("Enter Employee Age");
+                int empAge = scanner.nextInt();
+
+                System.out.println("Enter Employee Salary");
+                int empSalary = scanner.nextInt();
+
+                System.out.println("Enter Department Id");
+                int dept_Id = scanner.nextInt();
 
                 EmployeeDao employeeDao = new EmployeeDao();
-                Employee employees = new Employee();
+                employeeDao.insertIntoEmployeeTable(empId , empFName , empLName , empAge , empCity , empSalary , department , dept_Id);
 
-                Department department = new Department();
-                employees.setDepartment(department);
 
-                //employees.getDepartment().getDeptId();
-
-              //  Set<Employee> empList = new HashSet<Employee>()
-
-                // deptDao.insertIntoDepartmentTable(1001 , "IT" , "GGN");
-
-                employeeDao.insertIntoEmployeeTable(1 , "Vaishnavi" , "Chaurasia" , 21 ,  "Mathura" , 20000 , department);
-
-                // employeeDao.insertIntoEmployeeTable(2 , "Kapil" , "Kumar" , 21 ,  "Naujheel" , 20000 , 1001);
-
-                System.out.println("Data Inserted Successfully !!");
                 /** Insert In Employee Table **/
             }
 
+            case 2: {
+
+                /** Update In Employee Table **/
+                EmployeeDao employeeDao = new EmployeeDao();
+                employeeDao.updateEmployeeTable();
+                System.out.println("----- Data Updated Successfully !! --------");
+                /** Update In Employee Table **/
+
+            }
+            case 3: {
+                /** Delete In Employee Table **/
+
+                EmployeeDao employeeDao = new EmployeeDao();
+                employeeDao.deleteEmployeeTable();
+                System.out.println("----- Data Deleted Successfully !! --------");
+
+                /** Delete In Employee Table **/
+
+            }
+
+            case 4: {
+                /** Retrieve In Employee Table **/
+
+                EmployeeDao employeeDao = new EmployeeDao();
+                employeeDao.getEmployeeTable();
+
+                /** Retrieve In Employee Table **/
+
+            }
+
+            case 5: {
+                /** Insert In Department Table **/
+
+                DepartmentDao departmentDao = new DepartmentDao();
+                departmentDao.insertIntoDepartmentTable(1001 , "IT" , "GGN");
+                System.out.println("----- Data Inserted Successfully !! --------");
+
+                /** Insert In Department Table **/
+
+            }
+
+            case 6: {
+                /** Retrieve In Department Table **/
+
+                DepartmentDao departmentDao = new DepartmentDao();
+                departmentDao.getDepartmentTable();
+
+                /** Retrieve In Department Table **/
+
+            }
+
         }
-
-
-
-//        System.out.println("Data Inserting .............");
-//        DepartmentDao deptDao = new DepartmentDao();
-//
-//        // deptDao.insertIntoDepartmentTable(1001 , "IT" , "GGN");
-//        deptDao.insertIntoDepartmentTable(1002, "HR", "Noida");
-//        deptDao.insertIntoDepartmentTable(1003, "Admin", "Delhi");
-//
 
 
 
